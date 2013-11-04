@@ -25,7 +25,6 @@ class stumpwm {
   }
 
   file { [
-          "/home/${::boxen_user}/.config/",
           "/home/${::boxen_user}/.config/lxsession",
           "/home/${::boxen_user}/.config/lxsession/LXDE",
           ]:
