@@ -38,6 +38,12 @@ class stumpwm {
     owner   => $::boxen_user,
   }
 
+  file { "/home/${::boxen_user}/.stumpwmrc":
+    ensure  => present,
+    content => "(set-prefix-key (kbd 'C-z'))",
+    owner   => $::boxen_user,
+  }
+
   exec { 'configure_and_compile':
     cwd     => $stumpwm_root,
     command => 'autoconf && ./configure && make',
